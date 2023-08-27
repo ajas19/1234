@@ -1,4 +1,4 @@
-package LinkDemo;
+upackage LinkDemo;
 
 public class LinkList1 {
     Node head;
