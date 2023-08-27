@@ -72,3 +72,25 @@ public class TreeMethods {
     }
     
 }
+
+public class demoTree {
+    public static void main(String[] args) {
+        TreeMethods tree = new TreeMethods();
+
+        tree.insertA(19);
+        tree.insertA(7);
+        tree.insertA(21);
+        tree.insertA(27);
+        tree.insertA(8);
+        tree.insertA(20);
+        tree.insertA(25);
+
+        tree.predis();
+        System.out.println();
+
+        tree.postdis();
+        System.out.println();
+
+        tree.indis();
+    }
+}
