@@ -1,0 +1,50 @@
+public class QuickSort {
+
+    public static  int divide (int arr[],int li,int ri) {
+        int pivot = arr[li];
+        int start = li;
+        int end = ri;
+
+        while (start < end ) {
+
+            while (arr[start] <= pivot && start<ri)  {
+                start++;
+            }
+            while (arr[end] > pivot && end>=li) {
+                end--;
+            }
+            if (start < end) {
+                int temp = arr[end];
+				System.out.println("value of temp " +temp);
+                arr[end] = arr[start];
+				System.out.println("value of arr[end] " +arr[end]);
+                arr[start] = temp;
+				System.out.println("value of arr[start] " +arr[start]);
+
+            }
+        }
+        int t = arr[end]; //changing pivot and right
+		
+        arr[end] = arr[li];
+        arr[li] = t;
+        System.out.println("value of end " +end);
+        return end;
+    }
+
+    public static void quicksort(int arr[],int lb,int rb) {
+        if(lb<rb) {
+            int ps = divide(arr,lb,rb);
+            quicksort(arr,lb,ps-1);
+            quicksort(arr,ps+1,rb);
+        }
+    }
+
+    public static void main(String[] args) {
+        int ar[] = {85,52,64,27,80,92,12,23};
+        quicksort(ar,0, ar.length-1);
+
+        for (int i=0; i< ar.length; i++){
+            System.out.println(ar[i]+",");
+        }
+    }
+}
